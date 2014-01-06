@@ -19,9 +19,29 @@
 #
 def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
-    pass
+    edge = [a, b, c]
+    a, b, c = sorted(edge)
+    if a + b < c:
+        return False
+    elif a <= 0 or b <= 0 or c <= 0:
+        return False
+    else:
+        edgeset = set(edge);
+        if len(edgeset) == 1:
+            return 'equilateral'
+        elif len(edgeset) == 2:
+            return 'isosceles'
+        elif len(edgeset)== 3:
+            return 'scalene'
+    #pass
 
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError(StandardError):
-    pass
+    def __init__(self,error):
+        self.error = error
+        StandardError.__init__(self,'False')
+
+    #pass
+
+
