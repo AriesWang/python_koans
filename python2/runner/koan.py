@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import unittest
+#单元测试包
 import re
-
+#正则表达式的包
 # Starting a classname or attribute with an underscore normally implies Private scope.
 # However, we are making an exception for __ and ___.
 
