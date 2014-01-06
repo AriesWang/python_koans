@@ -21,17 +21,17 @@ def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
     edge = [a, b, c]
     a, b, c = sorted(edge)
-    if a + b < c:
-        return False
+    if a + b <= c:
+        raise TriangleError(None)
     elif a <= 0 or b <= 0 or c <= 0:
-        return False
+        raise TriangleError(None)
     else:
         edgeset = set(edge);
-        if len(edgeset) == 1:
+        if a == b and b == c:
             return 'equilateral'
-        elif len(edgeset) == 2:
+        elif a == b or b == c:
             return 'isosceles'
-        elif len(edgeset)== 3:
+        else:
             return 'scalene'
     #pass
 
